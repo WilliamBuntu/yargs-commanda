@@ -11,7 +11,7 @@ const yargs = require('yargs')
         title: {
             describe: 'note title',
             demandOption: true,
-            type: 'string',
+            type: 'string'
 
         }
     },
@@ -48,6 +48,6 @@ const yargs = require('yargs')
     }
  })
 
- // add remove read list
+ // add remove read list   commands
 //console.log(yargs.argv)
 yargs.parse()
