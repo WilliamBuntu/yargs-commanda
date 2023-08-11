@@ -1,4 +1,5 @@
 const yargs = require('yargs')
+const notes = require('./notes.js')
 
 // customize yargs version
 //yargs.version('')
@@ -13,14 +14,23 @@ const yargs = require('yargs')
             demandOption: true,
             type: 'string'
 
+        },
+        body: {
+           describe: 'body title',
+            demandOption: true,
+            type: 'string'
         }
     },
     handler: function (argv) {
-         console.log('title: '+  argv.title)
+         // console.log('title: '+  argv.title)
+         // console.log('body: '+  argv.body)
+
+         notes.addNotes(argv.title, argv.body)
     }
  })
 
 // create remove  command
+
  yargs.command({
     command: 'remove',
     describe: 'remove a note',
