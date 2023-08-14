@@ -34,8 +34,19 @@ const notes = require('./notes.js')
  yargs.command({
     command: 'remove',
     describe: 'remove a note',
-    handler: function () {
-         console.log('remove the stated  note')
+    builder: {
+
+      title: {
+            describe: 'remove a note',
+            demandOption: true,
+            type: 'string'
+
+        }
+
+    },
+    handler: function (argv) {
+         // console.log('remove the stated  note')
+         notes.removeNote(argv.title)
     }
  })
 
